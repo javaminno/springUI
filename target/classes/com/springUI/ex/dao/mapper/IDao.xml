@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http//mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.springUI.ex.dao.IDao">
+	<select id="listDao" resultType="com.springUI.ex.dto.Dto">
+		SELECT * FROM MEMBERLIST ORDER BY MNUM DESC 
+	</select>
+
+	<select id="writeDao">
+		 INSERT INTO MEMBERLIST (MNUM, MNAME, MTEL, MADDR, MDATE) VALUES (MEMBER_SEQ.NEXTVAL, #{param1}, #{param2}, #{param3}, #{param4})
+	</select>
+	
+	<select id="viewDao" resultType="com.springUI.ex.dto.Dto">
+		SELECLT * FROM MEMBERLIST WHERE MNUM = #{param1}
+	</select>
+	
+	<select id="deleteDao">
+		DELETE FROM MEMBERLIST WHERE MNUM = #{param1}
+	</select>
+	
+	<select id="modifyDao">
+		UPDATE MEMBERLIST SET MNAME = #{param1}, MTEL = #{param2}, MADDR = #{param3}, MDATE = #{param4} WHERE MNUM = #{param5}
+	</select>
+	
+</mapper>
