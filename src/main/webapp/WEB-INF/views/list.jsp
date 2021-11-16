@@ -1,40 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>íšŒì›ë¦¬ìŠ¤íŠ¸</title>
+<meta http-equiv="Content-Type" content="text/html; charset="EUC-KR">
+<title>È¸¿ø¸®½ºÆ®</title>
 </head>
 <body>
-	<table width="800" cellpadding="0" cellspacing="0" border="1">
+	<table width="800" cellpadding="0" cellspacing="0" border="1" bgcolor="red">
 	<tr>
-		<td><h1><center>O O O ë™í˜¸íšŒ íšŒì› ê´€ë¦¬</center></h1></td>
+		<td><h1><center><span style="color:blue;">µ¿È£È¸ È¸¿ø °ü¸®</span></center></h1></td>
 	</tr>
 </table>
 <br>
 <table width="800" cellpadding="0" cellspacing="0" border="1">
-		<tr align="center">
-			<td>ë²ˆí˜¸</td>
-			<td>ì´ë¦„</td>
-			<td>ì „í™”ë²ˆí˜¸</td>
-			<td>ì£¼ì†Œ</td>
-			<td>ê°€ìž…ì¼</td>
+		<tr align="center" bgcolor="black">
+			<td><span style="color:white;">¹øÈ£</span></td>
+			<td><span style="color:white;">ÀÌ¸§</span></td>
+			<td><span style="color:white;">ÀüÈ­¹øÈ£</span></td>
+			<td><span style="color:white;">ÁÖ¼Ò</span></td>
+			<td><span style="color:white;">°¡ÀÔÀÏ</span></td>
 		</tr>
 		<c:forEach items="${list}" var="dto">
 		<tr>
-			<td align="center">${dto.mNum }</td>
-			<td align="center">${dto.mName }</td>
+			<td align="center" bgcolor="gray">${dto.mNum }</td>
+			<td align="center"><a href ="view?mNum=${dto.mNum}">${dto.mName}</a></td>
 			<td align="center">${dto.mTel }</td>
 			<td>&nbsp; ${dto.mAddr}</td>
 			<td align="center">${dto.mDate }</td>
 		</tr>
 		</c:forEach>
-		<tr>
-			<td height="50" colspan="5" align="right">
-			<form action="writeForm" method="post"></form>
-			<input type="submit" value="íšŒì›ì •ë³´ìž…ë ¥">&nbsp;&nbsp;
+		<tr bgcolor="yellow">
+			<td height="0" colspan="5" align="right">
+			<form action="writeForm" method="post">
+			<input type="submit" value="È¸¿øÁ¤º¸ÀÔ·Â">&nbsp;&nbsp;
+			<h6 align="left">ÃÑ 7¸íÀÇ È¸¿øÀÌ ÀÖ½À´Ï´Ù</h6>
 			</form>
 			</td>
 		</tr>
